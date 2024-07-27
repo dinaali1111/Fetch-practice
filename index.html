@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <form action="" id="form">
-        <input name="username" type="text">
-   
-        <input name="password" type="password">
-        <button type="submit">submit</button>
-
-
-    </form>
-  
-<script src="main.js"></script>   
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Signup Form</title>
+    </head>
+    <body>
+        <form class="signup-form" id="form">
+            <div class="signup-form__group">
+                <label for="username" class="signup-form__label">Username</label>
+                <input class="signup-form__input signup-form__input--username" name="username" type="text">
+            </div>
+            <div class="signup-form__group">
+                <label for="password" class="signup-form__label">Password</label>
+                <input class="signup-form__input signup-form__input--password" name="password" type="password">
+            </div>
+            <button class="signup-form__button" type="submit">Submit</button>
+        </form>
+        <script src="main.js"></script>
+    </body>
 </html>

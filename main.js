@@ -1,15 +1,22 @@
-  const form=document.getElementById("form")
-  form.addEventListener("submit", function(getinput){
-    getinput.preventDefault();
-const input= new FormData(form);
-console.log(input)
+// Get the form element
+const signupForm = document.getElementById("form");
 
-fetch( 'https://jsonplaceholder.typicode.com/users',{
-method:'POST',
-body:input
-})
-.then(resolved=>resolved.json())
-.then(data=>console.log( 'request is resolve',  data))
-.catch(error=>console.log(error))
+// Add an event listener for the form submission
+signupForm.addEventListener("submit", function (event) {
+  event.preventDefault();
 
+  // Create a FormData object from the form element
+  const formData = new FormData(signupForm);
+
+  // Send a POST request with the form data
+  fetch("https://jsonplaceholder.typicode.com/users", {
+    method: "POST",
+    body: formData,
   })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log("Request resolved", data);
+      signupForm.reset();
+    })
+    .catch((error) => console.error("Request failed", error));
+});
